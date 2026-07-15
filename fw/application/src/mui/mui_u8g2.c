@@ -251,8 +251,8 @@ void mui_u8g2_set_contrast_level(uint8_t value) {
 
 // This is a guard to prevent the contrast too low to make the display invisible.
 #ifdef LCD_SCREEN
-    if (value < 60) {
-        value = 60;
+    if (value < 1) {
+        value = 1;
     }
 #endif
     u8g2_SetContrast(&p_mui->u8g2, (value - 1) * (255.0 / 99.0));
